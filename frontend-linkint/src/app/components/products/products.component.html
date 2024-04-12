@@ -1,0 +1,31 @@
+<!-- Plantilla para mostrar los productos disponibles -->
+<div class="container-product-card">
+  <!-- Renderización de todos los productos -->
+  <div class="container-header">
+    <div class="container-title">
+      <h2>Productos Disponibles</h2>
+    </div>
+    <!-- Botón para crear un nuevo producto -->
+    <div class="button-container">
+      <a class="custom-button" routerLink="/create-product">Crear Producto</a>
+    </div>
+  </div>
+  <div class="product-card">
+    @for (product of products; track $index){
+      <div class="product-details">
+          <div class="product-image">
+            <img [src]="product.image" alt="Product Image">
+          </div>
+          <h3>{{ product.title }}</h3>
+          <p>Precio: {{ product.price }}</p>
+          <p>Descripción: {{ product.description }}</p>
+          <p>Cantidad: {{ product.cantidad }}</p>
+          <!-- Botón para ordenar el producto -->
+          <div>
+            <button (click)="getCreateOrder()" class="order-button">Ordenar producto</button>
+          </div>
+      </div>
+    }
+  </div>
+</div>
+

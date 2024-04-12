@@ -1,0 +1,28 @@
+.card {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto; /* Centra la tarjeta horizontalmente */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+p:last-child {
+  margin-bottom: 0; /* Elimina el margen inferior del último párrafo */
+}

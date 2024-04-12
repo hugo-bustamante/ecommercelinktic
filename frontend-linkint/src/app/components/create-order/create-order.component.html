@@ -1,0 +1,36 @@
+<!--Plantilla HTML para el formulario de creación de un nuevo pedido.
+Se utiliza para recopilar la información necesaria para crear un nuevo pedido.
+
+En este formulario agregas la cantidad de pedidos que quieres ordenar de un producto
+descrito por el cliente-->
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Título:</label>
+    <input type="text" id="title" formControlName="title">
+    <div *ngIf="orderForm?.get('title')?.invalid && orderForm?.get('title')?.touched" class="error-message">
+      Título es requerido
+    </div>
+  </div>
+  <div>
+    <label for="price">Precio:</label>
+    <input type="number" id="price" formControlName="price">
+    <div *ngIf="orderForm?.get('price')?.invalid && orderForm?.get('price')?.touched" class="error-message">
+      Precio es requerido y debe ser un número positivo
+    </div>
+  </div>
+  <div>
+    <label for="price">Cantidad:</label>
+    <input type="number" id="price" formControlName="order_number">
+    <div *ngIf="orderForm?.get('order_number')?.invalid && orderForm?.get('order_number')?.touched" class="error-message">
+      Es campo no puede quedar vacio
+    </div>
+  </div>
+  <div>
+    <label for="description">Descripción:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="orderForm?.get('description')?.invalid && orderForm?.get('description')?.touched" class="error-message">
+      Descripción es requerida minimo de 5 letras
+    </div>
+  </div>
+  <button type="submit" [disabled]="!orderForm.valid">Guardar</button>
+</form>

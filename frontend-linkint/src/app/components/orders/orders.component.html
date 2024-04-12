@@ -1,0 +1,28 @@
+<!-- Plantilla para mostrar los pedidos realizados -->
+<div class="container-order-card">
+    <!-- Renderización de todos los productos -->
+    <div class="container-title">
+      <h2>Pedidos Realizados</h2>
+    </div>
+    <div class="container-header">
+      <div class="container-total">
+        <h2>Total:</h2>
+        <p>{{ totalOrders }}</p>
+      </div>
+      <!-- Botón para regresar a la página principal -->
+      <div class="button-container">
+        <a class="custom-button" routerLink="/home">Regresar</a>
+      </div>
+    </div>
+    <div class="order-card">
+      @for (order of orders; track $index){
+        <div class="order-details">
+            <h3>{{ order.title }}</h3>
+            <p>Precio: {{ order.price }}</p>
+            <p>Descripción: {{ order.description }}</p>
+            <p>#Pedidos: {{ order.order_number }}</p>
+        </div>
+      }
+    </div>
+</div>
+
